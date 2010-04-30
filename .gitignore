@@ -1,3 +1,5 @@
-config
+config.user
 *~
 mail
+lib
+htmlmail

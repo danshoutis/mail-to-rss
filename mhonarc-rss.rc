@@ -1,0 +1,114 @@
+<FieldOrder>
+
+</FieldOrder>
+
+<Sort>
+
+</Sort>
+
+<DayBegin>
+
+</DayBegin>
+
+<DayEnd>
+
+</DayEnd>
+
+<!-- This is a MHonArc rcfile, which is designed to
+     generate RSS 2.0 output. 
+
+     Written by Dave Stragand, dave(_dot_)stragand(_at_)
+     forwardlook(_dot_)net, 2007-04-10, v. 1.0.  Based
+     upon the original RDF MHonArc rcfile created by
+     Jeff Breidenbach, jeff(_at_)jab(_dot_)org, Aug 26, 1999,
+     v. 1.0 and David Gibbs' midrange.com mailing list archives
+     RDF RC file example posted at 
+     http://david.fallingrock.net/2005/07/22/rss-from-mhonarc/
+
+     Current versions of this rcfile may be found at
+     http://www.forwardlook.net/features/rc-rss20.txt
+                                                         -->
+
+
+<!-- ------------------------------------ -->
+<!-- Section 0: Configuration adjustments -->
+<!-- ------------------------------------ -->
+
+<!-- How many messages do we want on the RSS index? -->
+<idxsize>
+30
+</idxsize>
+
+<!-- What file shall we write the RSS 2.0 index to? -->
+<idxfname>
+maillist.rss
+</idxfname>
+
+<!-- ----------------------------- -->
+<!-- Section 1: Specify RSS markup -->
+<!-- ----------------------------- -->
+
+<ssmarkup>
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+</ssmarkup>
+
+<idxpgbegin>
+  <channel>
+    <title>Your Title</title>
+    <link>http://www.example.org/YourArchiveName</link>
+    <description>Description of Your Feed</description>
+    <language>en-us</language>
+    <pubDate>$GMTDATE(%a, %d %b %Y %H:%M:%S)$ GMT</pubDate>
+    <lastBuildDate>$GMTDATE(%a, %d %b %Y %H:%M:%S)$ GMT</lastBuildDate>
+    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <generator>MHonArc RSS 2.0 RCFile</generator>
+    <managingEditor>[EMAIL PROTECTED] (Postmaster Display
+Name)</managingEditor>
+    <webMaster>[EMAIL PROTECTED] (Webmaster Display
+Name)</webMaster>
+    <image>
+      <title>Your Title</title>
+      <url>http://www.example.org/images/image.jpg</url>
+      <link>http://www.example.org/YourArchiveName</link>
+    </image>
+</idxpgbegin>
+
+
+<litemplate>
+  <item>
+    <title>$SUBJECTNA$</title>
+    <link>http://www.example.org/YourArchiveName/$MSG$</link>
+    <description>$X-MSG-PREVIEW$</description>
+    <pubDate>$MSGGMTDATE(CUR;%a, %d %b %Y %H:%M:%S)$ GMT</pubDate>
+    <guid
+isPermaLink="true">http://www.example.org/YourArchiveName/$MSG$</guid>
+    <author>$FROMADDR$ ($FROMNAME$)</author>
+  </item>
+</litemplate>
+
+<idxpgend>
+  </channel>
+  </rss>
+</idxpgend>
+
+<!-- ----------------------------------------------------- -->
+<!-- Section 2: Remove any HTML left from default settings -->
+<!-- ----------------------------------------------------- -->
+
+<listbegin>
+ 
+</listbegin>
+
+<listend>
+ 
+</listend>
+
+<nodoc>
+
+<nomultipg>
+<main>
+
+<!-- --- -->
+<!-- End -->
+<!-- --- -->

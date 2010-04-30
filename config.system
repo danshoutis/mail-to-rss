@@ -1,0 +1,13 @@
+# common config options
+
+# Protocol
+PROTO=IMAP
+
+# Server
+SERVER=imap.gmail.com
+
+# MHonArc home:
+MHONARC=$ROOT/lib/MHonArc-2.6.16/
+
+# HTML path:
+HTMLPATH=$ROOT/htmlmail

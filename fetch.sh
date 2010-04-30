@@ -3,20 +3,15 @@ SCRIPT=$(readlink -f $0)
 ROOT=`dirname $SCRIPT`
 
 # read config vars
-. $ROOT/config
+. $ROOT/config.user
+. $ROOT/config.system
 
-# make sure delivery folder exists
-mkdir -p $DELIVERY
+# Make sure HTML folder exists.
+mkdir -p $HTMLPATH/$LABEL
 
-PROCMAILRC=$ROOT/procmailrc
-
-echo "GMail addr is: " $ADDR
-echo "Procmail at: " $PROCMAILRC
-
-FETCHALL=""
-[ -f $DELIVERY/$LABEL ] || FETCHALL="fetchall"
-echo "Fetchall is: " $FETCHALL
-
+# Add mhonarc to path:
+PERL5LIB=$MHONARC/lib $PERL5LIB
+export PERL5LIB
 
 # Run fetchmail w/ stdin config
 fetchmail --fetchmailrc - <<EOF
@@ -25,6 +20,7 @@ poll $SERVER protocol IMAP
   folder $LABEL
   ssl
   keep
-  $FETCHALL
-mda "procmail -m MAILDIR=$DELIVERY DEFAULT=$LABEL $PROCMAILRC"
+mda "perl $MHONARC/examples/mha-preview -main -folrefs -outdir $HTMLPATH/$LABEL -otherindexes $ROOT/mhonarc-rss.rc --add"
+
 EOF
+

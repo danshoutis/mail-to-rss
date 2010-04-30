@@ -1,0 +1,6 @@
+
+# Address
+ADDR=your-address@gmail.com
+SECRET=your-password
+LABEL=label-you-want-to-html-and-rssify # I'm not responsible if you make this your inbox
+
