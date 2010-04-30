@@ -10,8 +10,9 @@ google reader.
 Dependencies
 ============
 
-fetchmail  (http://fetchmail.berlios.de/)
-MHonArc (http://www.mhonarc.org/)
+* fetchmail  (http://fetchmail.berlios.de/)
+
+*MHonArc (http://www.mhonarc.org/)
 
 Setup
 =====
