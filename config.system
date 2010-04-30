@@ -2,6 +2,7 @@
 
 # Protocol
 PROTO=IMAP
+SSL=ssl
 
 # Server
 SERVER=imap.gmail.com

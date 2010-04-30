@@ -8,3 +8,5 @@ SECRET=your-password
 # I'm not responsible have your inbox here. ;) labels with spaces not supported.
 LABELS="labels you want separated by spaces"
 
+# The RSS thing needs a way to generate absolute URLS:
+URLROOT=http://some.website.here.com/mailfeeds/

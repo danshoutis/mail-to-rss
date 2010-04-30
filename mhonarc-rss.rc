@@ -55,13 +55,13 @@ maillist.rss
 
 <idxpgbegin>
   <channel>
-    <title>Your Title</title>
+    <title>email subscription: $ENV(LABEL)$</title>
     <link>http://www.example.org/YourArchiveName</link>
     <description>Description of Your Feed</description>
     <language>en-us</language>
     <pubDate>$GMTDATE(%a, %d %b %Y %H:%M:%S)$ GMT</pubDate>
     <lastBuildDate>$GMTDATE(%a, %d %b %Y %H:%M:%S)$ GMT</lastBuildDate>
-    <docs>http://blogs.law.harvard.edu/tech/rss</docs>
+    <docs></docs>
     <generator>MHonArc RSS 2.0 RCFile</generator>
     <managingEditor>[EMAIL PROTECTED] (Postmaster Display
 Name)</managingEditor>
@@ -78,11 +78,11 @@ Name)</webMaster>
 <litemplate>
   <item>
     <title>$SUBJECTNA$</title>
-    <link>http://www.example.org/YourArchiveName/$MSG$</link>
+    <link>$ENV(URLROOT)$/$ENV(LABEL)$/$MSG$</link>
     <description>$X-MSG-PREVIEW$</description>
     <pubDate>$MSGGMTDATE(CUR;%a, %d %b %Y %H:%M:%S)$ GMT</pubDate>
     <guid
-isPermaLink="true">http://www.example.org/YourArchiveName/$MSG$</guid>
+isPermaLink="true">$ENV(URLROOT)$/$ENV(LABEL)$/$MSG$</guid>
     <author>$FROMADDR$ ($FROMNAME$)</author>
   </item>
 </litemplate>
