@@ -12,7 +12,7 @@ Dependencies
 
 * fetchmail  (http://fetchmail.berlios.de/)
 
-*MHonArc (http://www.mhonarc.org/)
+* MHonArc (http://www.mhonarc.org/)
 
 Setup
 =====
