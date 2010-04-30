@@ -1,0 +1,13 @@
+
+# Address
+ADDR=your-address@gmail.com
+SECRET=your-password
+LABEL=label-you-want-to-html-and-rssify
+
+# --- probably no need to edit below here ---
+PROTO=IMAP
+SERVER=imap.gmail.com
+
+
+# Working dir for email messages
+DELIVERY=$ROOT/mail
