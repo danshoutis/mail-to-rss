@@ -6,15 +6,20 @@ ROOT=`dirname $SCRIPT`
 . $ROOT/config.user
 . $ROOT/config.system
 
-# Make sure HTML folder exists.
-mkdir -p $HTMLPATH/$LABEL
+
 
 # Add mhonarc to path:
 PERL5LIB=$MHONARC/lib $PERL5LIB
 export PERL5LIB
 
-# Run fetchmail w/ stdin config
-fetchmail --fetchmailrc - <<EOF
+# Impl function: Run fetchmail w/ stdin config
+go()
+{
+    LABEL=$1
+    # Make sure HTML folder exists.
+    mkdir -p $HTMLPATH/$LABEL
+
+    fetchmail --fetchmailrc - <<EOF
 poll $SERVER protocol IMAP
   user $ADDR with password "$SECRET"
   folder $LABEL
@@ -23,4 +28,7 @@ poll $SERVER protocol IMAP
 mda "perl $MHONARC/examples/mha-preview -main -folrefs -outdir $HTMLPATH/$LABEL -otherindexes $ROOT/mhonarc-rss.rc --add"
 
 EOF
+}
 
+# Actually do the work:
+for l in $LABELS; do go $l; done
